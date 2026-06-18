@@ -1,0 +1,60 @@
+.outline-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.outline-count {
+  font-size: 11px;
+  background: var(--bg-hover);
+  padding: 1px 6px;
+  border-radius: 8px;
+}
+
+.outline-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.outline-item:hover {
+  background: var(--bg-hover);
+}
+
+.outline-item.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.outline-item.active:hover {
+  background: var(--accent);
+}
+
+.outline-toggle {
+  width: 14px;
+  font-size: 10px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.outline-toggle-placeholder {
+  width: 14px;
+  flex-shrink: 0;
+}
+
+.outline-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.outline-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}

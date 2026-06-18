@@ -1,0 +1,81 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: var(--menu-bg);
+  border-bottom: 1px solid var(--border-color);
+  gap: 4px;
+  flex-shrink: 0;
+  -webkit-app-region: drag;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-color);
+  margin: 0 4px;
+}
+
+.toolbar-btn {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.toolbar-btn:hover:not(:disabled) {
+  background: var(--menu-hover);
+}
+
+.toolbar-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.toolbar-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  padding: 4px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+.dropdown-menu button:hover {
+  background: var(--bg-hover);
+}

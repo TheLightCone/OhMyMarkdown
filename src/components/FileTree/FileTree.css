@@ -1,0 +1,105 @@
+.file-tree {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tree-node {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 13px;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tree-node:hover {
+  background: var(--bg-hover);
+}
+
+.tree-node.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.tree-node.active .badge {
+  opacity: 0.8;
+}
+
+.tree-node.selected {
+  background: var(--bg-hover);
+  outline: 1px solid var(--accent);
+}
+
+.tree-icon {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.tree-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.tree-checkbox {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.tree-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.batch-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: var(--bg-hover);
+  font-size: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.context-menu {
+  position: fixed;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 200;
+  min-width: 160px;
+  padding: 4px;
+}
+
+.context-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.context-menu button:hover {
+  background: var(--bg-hover);
+}
+
+.context-menu button.danger {
+  color: var(--danger);
+}
+
+.context-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 4px 0;
+}

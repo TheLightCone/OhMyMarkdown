@@ -1,0 +1,169 @@
+/* 标题跳转高亮 */
+.vditor-heading-flash {
+  animation: vditor-heading-flash 1.2s ease;
+  outline: 2px solid var(--accent, #1677ff);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes vditor-heading-flash {
+  0% { background-color: rgba(22, 119, 255, 0.35); }
+  100% { background-color: transparent; }
+}
+
+/* ==高亮== （Lute mark 语法） */
+.vditor-ir .vditor-ir__preview mark,
+.vditor-ir mark,
+.vditor-reset mark {
+  background-color: #fff566 !important;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+[data-theme="dark"] .vditor-ir .vditor-ir__preview mark,
+[data-theme="dark"] .vditor-ir mark,
+[data-theme="dark"] .vditor-reset mark {
+  background-color: #8a7500 !important;
+  color: #fff;
+}
+
+/* 上下标（span 类名，兼容 Vditor IR） */
+.vditor-ir .md-sub,
+.vditor-ir .vditor-ir__preview .md-sub,
+.vditor-reset .md-sub {
+  vertical-align: sub;
+  font-size: 0.75em;
+}
+
+.vditor-ir .md-sup,
+.vditor-ir .vditor-ir__preview .md-sup,
+.vditor-reset .md-sup {
+  vertical-align: super;
+  font-size: 0.75em;
+}
+
+.vditor-ir .vditor-ir__preview sub,
+.vditor-ir .vditor-ir__preview sup,
+.vditor-ir sub,
+.vditor-ir sup,
+.vditor-reset sub,
+.vditor-reset sup {
+  font-size: 0.75em;
+}
+
+/* 脚注 */
+.vditor-ir [data-type="footnotes-ref"],
+.vditor-ir sup[data-type="footnotes-ref"] {
+  cursor: pointer;
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+}
+
+.vditor-ir [data-type="footnotes-ref"][data-footnote-tip]:not([data-footnote-tip=""]):hover::after {
+  content: attr(data-footnote-tip);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 6px);
+  z-index: 20;
+  min-width: 120px;
+  max-width: 320px;
+  padding: 8px 10px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: var(--text-primary);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+.vditor-ir [data-type="footnotes-def"] {
+  cursor: pointer;
+}
+
+/* GFM Alerts / Callouts */
+.vditor-ir blockquote.md-alert,
+.vditor-ir blockquote.md-alert-inner,
+.vditor-ir [data-type="blockquote"].md-alert .vditor-ir__preview blockquote,
+.vditor-ir [data-block].md-alert .vditor-ir__preview blockquote {
+  border-left: 4px solid #0969da;
+  background: rgba(9, 105, 218, 0.08);
+  padding: 8px 12px 8px 16px;
+  margin: 8px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.vditor-ir blockquote.md-alert-note,
+.vditor-ir [data-alert-type="note"] blockquote { border-left-color: #0969da; background: rgba(9, 105, 218, 0.08); }
+.vditor-ir blockquote.md-alert-tip,
+.vditor-ir [data-alert-type="tip"] blockquote { border-left-color: #1a7f37; background: rgba(26, 127, 55, 0.08); }
+.vditor-ir blockquote.md-alert-important,
+.vditor-ir [data-alert-type="important"] blockquote { border-left-color: #8250df; background: rgba(130, 80, 223, 0.08); }
+.vditor-ir blockquote.md-alert-warning,
+.vditor-ir [data-alert-type="warning"] blockquote { border-left-color: #9a6700; background: rgba(154, 103, 0, 0.1); }
+.vditor-ir blockquote.md-alert-caution,
+.vditor-ir [data-alert-type="caution"] blockquote { border-left-color: #cf222e; background: rgba(207, 34, 46, 0.08); }
+
+.vditor-ir blockquote.md-alert-inner::before,
+.vditor-ir blockquote.md-alert::before,
+.vditor-ir [data-type="blockquote"].md-alert .vditor-ir__preview blockquote::before {
+  content: attr(data-alert-label);
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+
+/* 常见 HTML 标签 — 保留浏览器默认样式 */
+.vditor-ir .vditor-ir__preview u,
+.vditor-ir .vditor-ir__preview kbd,
+.vditor-ir .vditor-ir__preview s,
+.vditor-ir .vditor-ir__preview del,
+.vditor-ir .vditor-ir__preview ins,
+.vditor-ir .vditor-ir__preview abbr,
+.vditor-ir .vditor-ir__preview details,
+.vditor-ir .vditor-ir__preview summary {
+  all: revert;
+}
+
+.vditor-ir .vditor-ir__preview details {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* 保留 style 属性 — 勿覆盖内联样式 */
+
+/* 编辑器字号 */
+.vditor-ir pre.vditor-reset {
+  font-size: var(--editor-font-size, 16px) !important;
+  line-height: 1.7 !important;
+  caret-color: var(--text-primary) !important;
+}
+
+/* IR 编辑区光标可见 */
+.editor-container .vditor-ir pre.vditor-reset,
+.editor-container .vditor-ir .vditor-ir__node,
+.editor-container .vditor-ir .vditor-ir__marker,
+.editor-container .vditor-ir [contenteditable='true'] {
+  caret-color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .editor-container .vditor-ir pre.vditor-reset,
+[data-theme='dark'] .editor-container .vditor-ir .vditor-ir__node,
+[data-theme='dark'] .editor-container .vditor-ir .vditor-ir__marker,
+[data-theme='dark'] .editor-container .vditor-ir [contenteditable='true'] {
+  caret-color: #e8e8e8 !important;
+}
+
+/* 内部链接可点击提示 */
+.vditor-ir .vditor-ir__preview a[href^="#"],
+.vditor-ir [data-type="a"] {
+  cursor: pointer;
+}

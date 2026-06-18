@@ -1,0 +1,112 @@
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--editor-bg);
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.editor-filename {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.editor-container {
+  flex: 1;
+  min-height: 0;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-container .vditor {
+  border: none !important;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.editor-container .vditor-toolbar {
+  flex-shrink: 0;
+  overflow: visible;
+  z-index: 2;
+}
+
+.editor-container .vditor-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-container .vditor-ir {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-container .vditor-ir pre.vditor-reset {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  color: var(--text-primary) !important;
+  background: var(--editor-bg) !important;
+  caret-color: var(--text-primary);
+}
+
+.editor-container .vditor-ir__node[contenteditable='true'],
+.editor-container .vditor-ir__marker {
+  caret-color: var(--text-primary);
+}
+
+/* 预览区链接可点击 */
+.editor-container .vditor-ir__preview a[href] {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.editor-container .vditor-ir__node--expand .vditor-ir__marker {
+  color: var(--text-secondary);
+}
+
+.editor-empty {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor-error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--danger);
+}
+
+.editor-error pre {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--bg-hover);
+  border-radius: 4px;
+  font-size: 12px;
+  max-width: 80%;
+  white-space: pre-wrap;
+}
